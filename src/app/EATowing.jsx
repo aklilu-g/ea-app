@@ -26,7 +26,7 @@ const COLORS = {
   onOrange: "#623200",
   muted: "#564334",
   mutedLight: "#afc8f0",
-  surfaceDim: "#dcd9d9",
+  surfaceWarm: "#FAAC82",
 };
 
 const hazardStyle = {
@@ -51,8 +51,11 @@ function Header() {
 
   return (
     <header
-      className="fixed top-0 w-full border-b-4 border-slate-900 bg-white z-50"
-      style={{ boxShadow: `4px 4px 0px 0px ${COLORS.orange}` }}
+      className="fixed top-0 w-full border-b-4 border-slate-900 z-50"
+      style={{
+        backgroundColor: COLORS.surfaceWarm,
+        boxShadow: `4px 4px 0px 0px ${COLORS.orange}`,
+      }}
     >
       <nav className="flex justify-between items-center h-20 px-8 w-full max-w-[1400px] mx-auto">
         <div className="text-2xl font-black text-slate-900 italic uppercase tracking-tighter">
@@ -98,7 +101,10 @@ function Header() {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t-2 border-slate-900 bg-white px-8 py-4 flex flex-col gap-4">
+        <div
+          className="md:hidden border-t-2 border-slate-900 px-8 py-4 flex flex-col gap-4"
+          style={{ backgroundColor: COLORS.surfaceWarm }}
+        >
           {links.map((l) => (
             <a
               key={l.label}
@@ -176,7 +182,7 @@ function Hero() {
               className="text-center py-5 px-8 text-xl font-extrabold uppercase bg-[#ff8c00] text-[#623200] hover:text-orange-500 hover:bg-slate-900 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               aria-label={`Call ${PHONE_DISPLAY} for emergency assistance`}
               style={{
-                boxShadow: "4px 4px 0px 0px #ffffff",
+                boxShadow: `4px 4px 0px 0px ${COLORS.surfaceWarm}`,
               }}
             >
               CALL FOR EMERGENCY ASSISTANCE
@@ -207,8 +213,9 @@ function Hero() {
 function ServiceCard({ icon: Icon, title, description }) {
   return (
     <div
-      className="bg-white p-8 border-2 flex flex-col h-full hover:-translate-y-1 transition-all"
+      className="p-8 border-2 flex flex-col h-full hover:-translate-y-1 transition-all"
       style={{
+        backgroundColor: COLORS.surfaceWarm,
         borderColor: COLORS.navy,
         boxShadow: `6px 6px 0px 0px ${COLORS.orange}`,
       }}
@@ -421,7 +428,7 @@ function Contact() {
           className="border-4 p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-12 relative"
           style={{
             borderColor: COLORS.navy,
-            backgroundColor: COLORS.surfaceDim,
+            backgroundColor: COLORS.surfaceWarm,
           }}
         >
           <div
