@@ -13,7 +13,8 @@ import {
   Siren,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
-import EAWheelLift from "./EA_wheel_lift.png";
+import Logo from "./ea_towing_logo.png";
+import TruckImage from "./truck.png";
 
 /* ------------------------------------------------------------------ */
 /*  Shared style tokens                                                */
@@ -55,8 +56,13 @@ function Header() {
       style={{ boxShadow: `4px 4px 0px 0px ${COLORS.orange}` }}
     >
       <nav className="flex justify-between items-center h-20 px-8 w-full max-w-[1400px] mx-auto">
-        <div className="text-2xl font-black text-slate-900 italic uppercase tracking-tighter">
-          EA towing
+        <div className="flex items-center gap-3 text-2xl font-black text-slate-900 italic uppercase tracking-tighter">
+          <img
+            src={Logo.src}
+            alt="EA Towing logo"
+            className="h-12 w-12 shrink-0 object-contain"
+          />
+          <span>EA towing</span>
         </div>
 
         <div className="hidden md:flex gap-8">
@@ -189,7 +195,7 @@ function Hero() {
           <img
             alt="Toronto Towing Emergency Service"
             className="w-full h-full object-cover absolute inset-0"
-            src={EAWheelLift.src}
+            src={TruckImage.src}
           />
           <div
             className="absolute inset-0 mix-blend-multiply"
